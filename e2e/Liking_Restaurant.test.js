@@ -16,10 +16,10 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.seeElement('.restaurant__title a');
+  I.seeElement('.restaurant-item__content h3');
 
-  I.waitForElement('.restaurant__title', 5);
-  const firstRestaurant = locate('.restaurant__title a').first();
+  I.waitForElement('.restaurant-item__content', 5);
+  const firstRestaurant = locate('.restaurant-item__content h3').first();
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
