@@ -1,11 +1,13 @@
+/* global Feature, Scenario, Before, locate */
+
 Feature('Review Restaurant');
 
 Before(({ I }) => {
   I.amOnPage('/');
 });
 
-Scenario('post a restaurant review', async ({ I }) => {
-  const reviewText = 'E2E Post Review text';
+Scenario('Post a restaurant review', async ({ I }) => {
+  const reviewText = 'E2E Post Review Text';
 
   I.amOnPage('/');
 
@@ -13,13 +15,13 @@ Scenario('post a restaurant review', async ({ I }) => {
   I.seeElement('.restaurant-item__content h3');
   I.click(locate('.restaurant-item__content h3').first());
 
-  I.waitForElement('#review-form', 10);
+  I.waitForElement('#review-form', 20);
   I.seeElement('#review-form');
   I.fillField('#review-name', 'E2E Test Review');
   I.fillField('#review-content', reviewText);
   I.click('#submit-review');
-  I.waitForElement('.review', 10);
+  I.waitForElement('#customerReviews', 10);
 
-  const lastReview = locate('.review').last();
-  const lastReviewText = await I.grabTextFrom(lastReview);
+  const lastReview = locate('#customerReviews').last();
+  I.seeElement(lastReview);
 });

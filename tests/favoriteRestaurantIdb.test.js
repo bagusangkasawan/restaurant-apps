@@ -31,10 +31,7 @@ describe('Favorite Restaurant Idb Contract Test Implementation', () => {
     await FavoriteRestaurantIdb.putRestaurant({ id: 1, name: 'Restaurant Name' });
     await FavoriteRestaurantIdb.deleteRestaurant(1);
 
-    // Menunggu sejenak untuk memastikan penghapusan terjadi
-    await new Promise((resolve) => setTimeout(resolve, 100));
-
     const restaurant = await FavoriteRestaurantIdb.getRestaurant(1);
-    expect(restaurant).toBeNull(); // Pastikan restoran tidak ada
+    expect(restaurant).toBeNull();
   });
 });

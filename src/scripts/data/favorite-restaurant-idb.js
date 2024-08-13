@@ -12,10 +12,10 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 const FavoriteRestaurantIdb = {
   async getRestaurant(id) {
     if (!id) {
-      return null;
+      return null; // Mengembalikan null jika ID tidak diberikan
     }
     const restaurant = await (await dbPromise).get(OBJECT_STORE_NAME, id);
-    return restaurant || null; // Kembalikan null jika tidak ditemukan
+    return restaurant === undefined ? null : restaurant; // Mengembalikan null jika tidak ditemukan
   },
 
   async getAllRestaurants() {
@@ -24,16 +24,17 @@ const FavoriteRestaurantIdb = {
 
   async putRestaurant(restaurant) {
     if (!restaurant || !restaurant.id) {
-      return;
+      return null; // Mengembalikan null jika data tidak valid
     }
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
   },
 
   async deleteRestaurant(id) {
     if (!id) {
-      return;
+      return null; // Mengembalikan null jika ID tidak diberikan
     }
-    return (await dbPromise).delete(OBJECT_STORE_NAME, id);
+    await (await dbPromise).delete(OBJECT_STORE_NAME, id);
+    return undefined; // Mengembalikan undefined untuk memenuhi aturan consistent-return
   },
 };
 

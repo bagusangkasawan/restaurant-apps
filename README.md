@@ -1,3 +1,4 @@
+
 # Restaurant Apps PWA + Testing and Optimized
 
 ## Description
@@ -35,10 +36,36 @@ npm run serve
 ```
 This will start an HTTP server to serve the built application.
 
+## Testing
+
+### Unit and Integration Tests
+To run unit and integration tests, use the following command:
+```bash
+npm run test
+```
+
+### Watch Mode
+To run tests in watch mode, use the following command:
+```bash
+npm run test:watch
+```
+
+### End-to-End Tests
+To run end-to-end tests, use the following command:
+```bash
+npm run e2e
+```
+
 ## Linting
 To run the linter and ensure your code adheres to the specified standards, use the following command:
 ```bash
 npm run lint
+```
+
+## Build Image
+To build image assets, use the following command:
+```bash
+npm run build-image
 ```
 
 ## Configuration
@@ -62,7 +89,9 @@ This project is licensed under the [ISC License](LICENSE).
 - **Prerequisites**: Details the necessary installations.
 - **Installation**: Instructions for installing dependencies.
 - **Running the Application**: Commands to run the application in different modes.
+- **Testing**: Commands for running various tests.
 - **Linting**: Command to run code linting.
+- **Build Image**: Command to build image assets.
 - **Configuration**: Details about Webpack and Babel configuration.
 - **Author**: Author information.
 - **License**: Licensing information.

@@ -164,7 +164,7 @@ main {
   height: 40px;
   animation: spin 1s linear infinite;
   position: absolute; /* Gunakan posisi absolute untuk overlay di tengah container */
-  top: 50%;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999; /* Pastikan spinner berada di atas konten lain */
@@ -454,6 +454,20 @@ Review
   font-size: 18px;
   color: white;
   cursor: pointer;
+}
+
+/*
+ * favorite
+ */
+
+ .content__heading {
+  padding: 20px;
+  top: 15%;
+  text-align: center;
+  color: #343a40;
+  font-size: 1.8em;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /*

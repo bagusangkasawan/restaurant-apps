@@ -18,10 +18,10 @@ const Favorite = {
 
     if (restaurants.length === 0) {
       contentHeadingElement.innerText = "You don't have any favorite restaurants";
-      restaurantsContainer.innerText = "";  // Clear the restaurants container
+      restaurantsContainer.innerText = ''; // Clear the restaurants container
     } else {
-      contentHeadingElement.innerText = "Your Favorite Restaurant";
-      restaurantsContainer.innerHTML = '';  // Clear the container before adding new content
+      contentHeadingElement.innerText = 'Your Favorite Restaurant';
+      restaurantsContainer.innerHTML = ''; // Clear the container before adding new content
       restaurants.forEach((restaurant) => {
         restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
       });

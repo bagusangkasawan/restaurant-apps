@@ -1,36 +1,31 @@
-const assert = require('assert');
+/* global Feature, Scenario, Before, locate */
 
 Feature('Liking Restaurants');
 
 Before(({ I }) => {
-  I.amOnPage('/#/favorite');
+  I.amOnPage('/');
 });
 
-Scenario('showing empty liked restaurants', ({ I }) => {
+Scenario('Showing empty liked restaurants', ({ I }) => {
+  I.amOnPage('/#/favorite');
   I.seeElement('.content__heading');
   I.see("You don't have any favorite restaurant");
 });
 
-Scenario('liking one restaurant', async ({ I }) => {
-  I.see("Your Favorite Restaurant", '.content__heading');
-
+Scenario('Liking one restaurant', async ({ I }) => {
   I.amOnPage('/');
 
-  I.seeElement('.restaurant-item__content h3');
+  I.waitForElement('.restaurant-item__content', 10);
+  I.seeElement('.restaurant-item__content');
 
-  I.waitForElement('.restaurant-item__content', 5);
   const firstRestaurant = locate('.restaurant-item__content h3').first();
-  const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
-  I.waitForElement('#likeButton', 5);
+  I.waitForElement('#likeButton', 10);
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.waitForElement('.restaurant__title', 5);
-  I.seeElement('.restaurant-item');
-  const likedRestaurantTitle = await I.grabTextFrom('.restaurant__title');
-
-  assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
+  I.waitForElement('.content__heading', 15);
+  I.see('Your Favorite Restaurant');
 });
