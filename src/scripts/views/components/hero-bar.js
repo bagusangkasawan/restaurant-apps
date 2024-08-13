@@ -12,19 +12,33 @@ class HeroBar extends HTMLElement {
     this.innerHTML = `
           <style>
           .hero {
+            position: relative;
             display: flex;
             align-items: center;
-            min-height: 500px;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+          }
+
+          .hero img {
+            position: absolute;
             width: 100%;
-            text-align: center;
-            background-image: url("./heros/hero-image_3.jpg");
-            background-position: center;
-            border-radius: 5px;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: -1;
+            transform: translateX(-50px);
+            margin-top: -70%;
           }
           
           .hero_inner {
-            margin: 0 auto;
-            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(black, 0.6);
           }
           
           .hero_title {
@@ -43,7 +57,17 @@ class HeroBar extends HTMLElement {
           }
           
   
+            @media screen and (min-width: 320px) {
+              .hero img {
+                transform: translateX(-30px);
+                margin-top: -90%;
+              }
+            }
+
             @media screen and (min-width: 768px) {
+              .hero img {
+                margin-top: -40%;
+              }
                 .hero_title {
                     font-size: 2.7em;
                   }
@@ -55,6 +79,9 @@ class HeroBar extends HTMLElement {
               }
       
               @media screen and (min-width: 1024px) {
+                .hero img {
+                  margin-top: -30%;
+                }
                 .hero_title {
                     font-size: 3.1em;
                   }
@@ -66,14 +93,20 @@ class HeroBar extends HTMLElement {
           </style>
   
           <div class="hero">
-            <div class="hero_inner">
-              <h1 class="hero_title">Where to Dine?</h1>
-              <p class="hero_tagline">
-                From street food vendors offering authentic local flavors to upscale restaurants providing luxurious dining experiences, Indonesia has it all.
-                Whether you're craving a quick bite or a gourmet meal, you'll find a variety of options to satisfy your taste buds.
-              </p>
-            </div>
+            <picture>
+              <source media="(max-width: 600px)" srcset="./heros/hero-image_3-large.jpg">
+              <img src="./heros/hero-image_3-small.jpg" 
+                    alt="hero restaurant"
+                    class="lazy">
+            </picture>
+          <div class="hero_inner">
+            <h1 class="hero_title">Where to eat?</h1>
+            <p class="hero_tagline">
+              From street food vendors offering authentic local flavors to upscale restaurants providing luxurious dining experiences, Indonesia has it all.
+              Whether you're craving a quick bite or a gourmet meal, you'll find a variety of options to satisfy your taste buds.
+            </p>
           </div>
+        </div>
         `;
   }
 }

@@ -14,7 +14,6 @@ class highlightBar extends HTMLElement {
         .content_highlight {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            padding: 2em;
           }
           
           .image_hightlight img {
@@ -97,10 +96,15 @@ class highlightBar extends HTMLElement {
 
         <article class="content_highlight">
           <div class="image_hightlight">
-            <img src="./heros/hero-image_2.jpg" alt="gambar makanan" />
+          <picture>
+              <source media="(max-width: 600px)" srcset="./heros/hero-image_2-large.jpg">
+              <img src="./heros/hero-image_2-small.jpg" 
+                    alt="hero restaurant"
+                    class="lazyload">
+            </picture>
           </div>
           <div class="text_hightlight">
-            <h1>Discover the Culinary Delights of Indonesia</h1>
+            <h1>Don't leave Indonesia before You Get a Taste</h1>
             <hr style="width: 50%; border: 3px solid #de9d7e; margin: auto" />
             <p>
               Indonesia, with its rich cultural heritage, offers a tantalizing array of flavors.
