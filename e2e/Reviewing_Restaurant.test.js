@@ -1,7 +1,7 @@
 Feature('Review Restaurant');
 
 Before(({ I }) => {
-  I.amOnPage('/#/favorite');
+  I.amOnPage('/');
 });
 
 Scenario('post a restaurant review', async ({ I }) => {
@@ -9,9 +9,9 @@ Scenario('post a restaurant review', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.restaurant_title', 10);
-  I.seeElement('.restaurant_title');
-  I.click(locate('.restaurant_title').first());
+  I.waitForElement('.restaurant-item__content h3', 10);
+  I.seeElement('.restaurant-item__content h3');
+  I.click(locate('.restaurant-item__content h3').first());
 
   I.waitForElement('#review-form', 10);
   I.seeElement('#review-form');

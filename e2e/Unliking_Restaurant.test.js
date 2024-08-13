@@ -7,8 +7,8 @@ Scenario('Unliking one restaurant', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.restaurant__title', 15); 
-  I.click(locate('.restaurant__title').first());
+  I.waitForElement('.restaurant-item__content h3', 15); 
+  I.click(locate('.restaurant-item__content h3').first());
 
   I.waitForElement('#likeButton', 15);  
   I.seeElement('#likeButton');
