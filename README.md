@@ -1,4 +1,4 @@
-# Restaurant Apps + PWA
+# Restaurant Apps PWA + Testing and Optimized
 
 ## Description
 This is a restaurant application created as part of an Expert Front-End submission. The app uses Webpack for bundling, Babel for transpiling, and Jest for testing.
