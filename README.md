@@ -68,6 +68,35 @@ To build image assets, use the following command:
 npm run build-image
 ```
 
+## Deployment
+
+### Deploy to GitHub Pages
+To deploy your application to GitHub Pages, follow these steps:
+
+1. **Build the Application:**
+   Build the production-ready version of your application by running:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to GitHub Pages:**
+   Run the following command to deploy the contents of the `dist` directory to the `gh-pages` branch of your GitHub repository:
+   ```bash
+   npm run deploy
+   ```
+
+3. **Configure GitHub Pages:**
+   - Go to your repository on GitHub.
+   - Navigate to the **Settings** tab.
+   - In the **Pages** section, set the source to the `gh-pages` branch and select `/` (root) as the folder.
+   - Click **Save**.
+
+4. **Access Your Deployed Site:**
+   After deployment, your site will be available at:
+   ```
+   https://<username>.github.io/<repository>/
+   ```
+
 ## Configuration
 
 ### Webpack
@@ -89,9 +118,8 @@ This project is licensed under the [ISC License](LICENSE).
 - **Prerequisites**: Details the necessary installations.
 - **Installation**: Instructions for installing dependencies.
 - **Running the Application**: Commands to run the application in different modes.
-- **Testing**: Commands for running various tests.
 - **Linting**: Command to run code linting.
-- **Build Image**: Command to build image assets.
+- **Deployment**: Instructions for deploying to GitHub Pages.
 - **Configuration**: Details about Webpack and Babel configuration.
 - **Author**: Author information.
 - **License**: Licensing information.

@@ -1,7 +1,7 @@
 {
   "name": "restaurant-apps",
   "version": "1.2.0",
-  "description": "submission 2 expert front-end",
+  "description": "submission 3 expert front-end",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
@@ -11,7 +11,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "e2e": "codeceptjs run --steps",
-    "build-image": "node sharp.js"
+    "build-image": "node sharp.js",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Bagus Angkasawan Sumantri Putra (bagusasp01@gmal.com)",
@@ -35,6 +36,7 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jest": "^28.7.0",
     "fake-indexeddb": "^4.0.2",
+    "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
     "html-webpack-plugin": "^5.6.0",
     "http-server": "^14.1.1",
