@@ -7,17 +7,17 @@ Scenario('Unliking one restaurant', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.restaurant_title', 15);  // Increased wait time
+  I.waitForElement('.restaurant_title', 15); 
   I.click(locate('.restaurant_title').first());
 
-  I.waitForElement('#likeButton', 15);  // Increased wait time
+  I.waitForElement('#likeButton', 15);  
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
 
-  I.dontSee('Your Favorite Restaurant', '.content__heading');  // Corrected to dontSee
-  I.wait(2);  // Small wait to ensure the list updates
+  I.dontSee('Your Favorite Restaurant', '.content__heading');
+  I.wait(2);
 
-  I.dontSeeElement('.restaurant-title');  // Ensure that the list is empty
+  I.dontSeeElement('.restaurant__title'); 
 });
