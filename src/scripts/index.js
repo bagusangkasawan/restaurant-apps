@@ -5,6 +5,8 @@ import '../styles/style.scss';
 import '../styles/responsive.scss';
 import '../styles/skip-link.scss';
 import App from './views/app';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import swRegister from './utils/sw-register';
 
 const app = new App({

@@ -99,9 +99,7 @@ class highlightBar extends HTMLElement {
           <div class="image_hightlight">
             <picture>
               <source media="(max-width: 600px)" srcset="./heros/hero-image_2-small.jpg">
-              <img src="./heros/hero-image_2-large.jpg" 
-                    alt="hero restaurant"
-                    class="lazyload">
+              <img data-src="./heros/hero-image_2-large.jpg" alt="hero restaurant" class="lazyload">
             </picture>
           </div>
           <div class="text_hightlight">

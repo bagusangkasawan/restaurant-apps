@@ -81,8 +81,8 @@ class HeroBar extends HTMLElement {
 
       <div class="hero">
         <picture>
-          <source media="(max-width: 600px)" srcset="./heros/hero-image_3-large.jpg">
-          <img class="lazyload" src="./heros/hero-image_3-small.jpg" alt="Hero Image">
+          <source media="(max-width: 600px)" srcset="./heros/hero-image_3-small.jpg">
+          <img class="lazyload" data-src="./heros/hero-image_3-large.jpg" alt="Hero Image">
         </picture>
         <div class="hero_inner">
           <h1 class="hero_title">Where to Dine?</h1>
